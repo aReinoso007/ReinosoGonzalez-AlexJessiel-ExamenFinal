@@ -42,17 +42,9 @@ public class SignosVitales implements Serializable {
 		this.cita = cita;
 	}
 
-
-
-
-
 	public int getCodigo() {
 		return codigo;
 	}
-
-
-
-
 
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
