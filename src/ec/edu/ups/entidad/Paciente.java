@@ -16,12 +16,12 @@ public class Paciente implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int codigo;
-	private String nombres;
-	private String apellidos;
 	@Column(unique=true)
 	private String cedula;
+	
+	private String nombres;
+	private String apellidos;
+	
 	private int numero;
 	private String direccion;
 	private String correo;
@@ -34,10 +34,10 @@ public class Paciente implements Serializable {
 	
 	
 
-	public Paciente(int codigo, String nombres, String apellidos, String cedula, int numero, String direccion,
+	public Paciente(String nombres, String apellidos, String cedula, int numero, String direccion,
 			String correo) {
 		super();
-		this.codigo = codigo;
+		
 		this.nombres = nombres;
 		this.apellidos = apellidos;
 		this.cedula = cedula;
@@ -48,10 +48,9 @@ public class Paciente implements Serializable {
 
 
 
-	public Paciente(int codigo, String nombres, String apellidos, String cedula, int numero, String direccion,
+	public Paciente(String nombres, String apellidos, String cedula, int numero, String direccion,
 			String correo, List<CitaMedica> citas) {
 		super();
-		this.codigo = codigo;
 		this.nombres = nombres;
 		this.apellidos = apellidos;
 		this.cedula = cedula;
@@ -63,13 +62,6 @@ public class Paciente implements Serializable {
 
 
 
-	public int getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
-	}
 
 	public String getNombres() {
 		return nombres;
@@ -127,48 +119,13 @@ public class Paciente implements Serializable {
 		this.citas = citas;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((apellidos == null) ? 0 : apellidos.hashCode());
-		result = prime * result + ((cedula == null) ? 0 : cedula.hashCode());
-		result = prime * result + codigo;
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Paciente other = (Paciente) obj;
-		if (apellidos == null) {
-			if (other.apellidos != null)
-				return false;
-		} else if (!apellidos.equals(other.apellidos))
-			return false;
-		if (cedula == null) {
-			if (other.cedula != null)
-				return false;
-		} else if (!cedula.equals(other.cedula))
-			return false;
-		if (codigo != other.codigo)
-			return false;
-		return true;
-	}
+	
 
 	@Override
 	public String toString() {
-		return "Paciente [codigo=" + codigo + ", nombres=" + nombres + ", apellidos=" + apellidos + ", cedula=" + cedula
-				+ ", numero=" + numero + ", direccion=" + direccion + ", correo=" + correo + ", citas=" + citas + "]";
+		return "Paciente [cedula=" + cedula + ", nombres=" + nombres + ", apellidos=" + apellidos + ", numero=" + numero
+				+ ", direccion=" + direccion + ", correo=" + correo + ", citas=" + citas + "]";
 	}
-	
-	
-	
-	
+
    
 }
