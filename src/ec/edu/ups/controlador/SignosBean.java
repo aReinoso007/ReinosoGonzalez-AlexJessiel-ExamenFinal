@@ -27,11 +27,11 @@ public class SignosBean implements Serializable{
 	private int codigoCita;
 	private List<CitaMedica> listaCita;
 	
-	private double freCardiaca;
-	private double freResp;
-	private double presion;
-	private double saturacion;
-	private double temperatura;
+	private String freCardiaca;
+	private String freResp;
+	private String presion;
+	private String saturacion;
+	private String temperatura;
 	
 	public SignosBean() {}
 	
@@ -39,6 +39,21 @@ public class SignosBean implements Serializable{
 	public void init() {
 		listaCita = ejbCitaMedicaFacade.findAll();
 		System.out.println(listaCita);
+	}
+	
+	
+	public String add() {
+		
+		CitaMedica cita = new CitaMedica();
+		cita = ejbCitaMedicaFacade.find(codigoCita);
+		System.out.println("cita recuperada:"+cita);
+		double fc = Double.parseDouble(this.freCardiaca);
+		double fr = Double.parseDouble(this.freResp);
+		double presion  = Double.parseDouble(this.presion);
+		double saturacion = Double.parseDouble(this.saturacion);
+		double temperatura = Double.parseDouble(this.temperatura);
+		
+		return null;
 	}
 
 	public SignosVitalesFacade getEjbSignosVitalesFacade() {
