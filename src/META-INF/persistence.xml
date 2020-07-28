@@ -5,5 +5,8 @@
 		<class>ec.edu.ups.entidad.CitaMedica</class>
 		<class>ec.edu.ups.entidad.Paciente</class>
 		<class>ec.edu.ups.entidad.SignosVitales</class>
+		<properties>
+			<property name="javax.persistence.schema-generation.database.action" value="create"/>
+		</properties>
 	</persistence-unit>
 </persistence>
