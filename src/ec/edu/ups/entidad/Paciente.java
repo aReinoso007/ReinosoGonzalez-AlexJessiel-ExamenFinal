@@ -31,6 +31,37 @@ public class Paciente implements Serializable {
 	public Paciente() {
 		super();
 	}
+	
+	
+
+	public Paciente(int codigo, String nombres, String apellidos, String cedula, int numero, String direccion,
+			String correo) {
+		super();
+		this.codigo = codigo;
+		this.nombres = nombres;
+		this.apellidos = apellidos;
+		this.cedula = cedula;
+		this.numero = numero;
+		this.direccion = direccion;
+		this.correo = correo;
+	}
+
+
+
+	public Paciente(int codigo, String nombres, String apellidos, String cedula, int numero, String direccion,
+			String correo, List<CitaMedica> citas) {
+		super();
+		this.codigo = codigo;
+		this.nombres = nombres;
+		this.apellidos = apellidos;
+		this.cedula = cedula;
+		this.numero = numero;
+		this.direccion = direccion;
+		this.correo = correo;
+		this.citas = citas;
+	}
+
+
 
 	public int getCodigo() {
 		return codigo;
